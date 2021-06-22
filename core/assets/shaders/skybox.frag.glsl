@@ -1,0 +1,8 @@
+#version 120
+
+varying vec3 texCoord;
+uniform samplerCube skybox;
+
+void main() {
+    gl_FragColor = textureCube(skybox, texCoord);
+}
