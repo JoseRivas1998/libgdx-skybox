@@ -122,10 +122,6 @@ public class Skybox implements Disposable {
         this.view = new Matrix4();
         this.projection = new Matrix4();
         this.combined = new Matrix4();
-
-
-
-
     }
 
     public void render(PerspectiveCamera camera) {
@@ -140,7 +136,7 @@ public class Skybox implements Disposable {
 
     private void updateMatrices(PerspectiveCamera camera) {
         final float aspect = camera.viewportWidth / camera.viewportHeight;
-        view.setToLookAt(new Vector3(), new Vector3(camera.direction), new Vector3(camera.up));
+        view.setToLookAt(Vector3.Zero, camera.direction, camera.up);
         projection.setToProjection(0.1f, 1.0f, camera.fieldOfView, aspect);
         combined.set(projection);
         Matrix4.mul(combined.val, view.val);
