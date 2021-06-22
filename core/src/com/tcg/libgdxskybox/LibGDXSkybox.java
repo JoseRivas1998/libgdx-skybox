@@ -58,7 +58,7 @@ public class LibGDXSkybox extends ApplicationAdapter {
 		camController = new CameraInputController(camera);
 		Gdx.input.setInputProcessor(camController);
 
-		this.skybox = new Skybox(Gdx.files.internal("marriottmadisonwest"));
+		this.skybox = new Skybox(Gdx.files.internal("lightblue"));
 
 	}
 
